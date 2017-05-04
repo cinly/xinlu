@@ -17,11 +17,7 @@
 		<h2 class="title tc f22 pb50">解决你的情绪</h2>
 		<div class="productList-wrap w1200 bc">
     <ul class="productList clearfix pb20">
-      <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
-				<% if index < 10 %>
-          <%= render :partial => "product_item", locals: { product: product, index: index } %>
-        <% end %>
-      <% end %>
+
     </ul>
   </div>
 	</div>

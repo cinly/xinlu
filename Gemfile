@@ -37,6 +37,23 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'ransack'
 gem 'will_paginate'
+gem 'seo_helper','~> 1.0'
+gem 'local_time'
+gem 'mailboxer'
+gem 'chosen-rails'
+gem 'paperclip', '~> 4.1'
+gem 'font-awesome-rails'
+gem 'aasm'
+gem 'letter_opener', group: :development
+gem 'figaro'
+gem 'fog'
+gem 'jquery-turbolinks'
+gem "twemoji"
+gem 'bullet', group: 'development'
+gem 'rollbar'
+gem 'pry'
+gem 'faker'
+gem 'annotate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
