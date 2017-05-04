@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224033603) do
+ActiveRecord::Schema.define(version: 20170504041859) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20170224033603) do
     t.integer  "cart_id"
     t.integer  "product_id"
     t.integer  "quantity",    default: 1
+    t.boolean  "is_selected", default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.boolean  "is_selected", default: false
   end
 
   create_table "carts", force: :cascade do |t|
@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 20170224033603) do
     t.string   "billing_address"
     t.string   "shipping_name"
     t.string   "shipping_address"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
     t.string   "token"
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.string   "aasm_state",       default: "order_placed"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
@@ -91,13 +91,13 @@ ActiveRecord::Schema.define(version: 20170224033603) do
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "quantity"
     t.integer  "price"
+    t.integer  "quantity"
+    t.string   "size"
+    t.integer  "category_id"
+    t.string   "image"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "image"
-    t.integer  "category_id"
-    t.string   "size"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -151,10 +151,6 @@ ActiveRecord::Schema.define(version: 20170224033603) do
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
     t.string   "nickname"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
