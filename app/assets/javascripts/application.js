@@ -12,8 +12,97 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require masonry/jquery.masonry
 //= require bootstrap-sprockets
-//= require bootstrap/alert
-//= require bootstrap/dropdown
+//= require jquery.raty
+//= require ratyrate
+//= require social-share-button
+//= require social-share-button/wechat
 //= require_tree .
+
+$(document).ready(function() {
+	$('#myCarousel').carousel({
+	interval: 5000
+	})
+
+    $('#myCarousel').on('slid.bs.carousel', function() {
+    	//alert("slid");
+	});
+
+
+});
+
+
+
+/* welcome-page pins*/
+
+$(function(){
+    // var $box = $('.box');
+    // $box.hide();
+    var $pins = $('#pins');
+    $pins.imagesLoaded(function(){
+      // $box.fadeIn();
+      $pins.masonry({
+        itemSelector : '.box',
+        isFitWidth: true,
+      });
+    });
+  });
+
+
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+
+/*End of welcome-page pins*/
+
+
+/* carousel effect  */
+
+// $('.carousel').carousel()
+
+/* scroll effect  */
+(function ($) {
+  $(document).ready(function(){
+    $('.index').hide();
+    $(function () {
+        $(window).scroll(function () {
+
+            if ($(this).scrollTop() > 1000) {
+                $('.index').fadeIn();
+            } else {
+                $('.index').fadeOut();
+            }
+        });
+    });
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.animated').fadeOut();
+            } else {
+                $('.animated').fadeIn();
+            }
+        });
+    });
+
+});
+  }(jQuery));
+
+
+/* star rating  */
+$('#star-rating img').eq(0).trigger('click')
+
+/* index effect */
+
+$(document).on('click', '.index', function () {
+  $('body').animate({'scrollTop': 0}, 700)
+})
+
+
+/* text animation */
+$(document).ready(function() {
+  $('.service-slogan p').fadeIn("slow");
+});
