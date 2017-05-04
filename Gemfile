@@ -30,30 +30,23 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
-gem 'devise'
 gem 'simple_form'
-gem 'font-awesome-rails'
+gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'ransack'
-gem 'will_paginate'
-gem 'seo_helper','~> 1.0'
-gem 'local_time'
-gem 'mailboxer'
-gem 'chosen-rails'
-gem 'paperclip', '~> 4.1'
 gem 'font-awesome-rails'
-gem 'aasm'
+gem 'awesome_rails_console'
+gem 'ransack'
+gem 'seo_helper'
+gem 'paperclip'
 gem 'letter_opener', group: :development
+gem 'aasm'
 gem 'figaro'
+gem 'ratyrate'
+gem 'masonry-rails'
+gem 'social-share-button'
 gem 'fog'
-gem 'jquery-turbolinks'
-gem "twemoji"
-gem 'bullet', group: 'development'
-gem 'rollbar'
-gem 'pry'
-gem 'faker'
-gem 'annotate'
+gem "intercom-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
