@@ -14,8 +14,7 @@
           <!-- End Search -->
         </div>
         <div class="header-center">
-          <!-- <a href="/"><i class="fa fa-coffee" aria-hidden="true"></i> 品 味 伴 客</a> -->
-          <!-- <a href="/"><span><img src="https://ww4.sinaimg.cn/large/006tNc79ly1fdcy9li35hg302s02sa9u.gif" style="width:40px;height:40px;margin-top:-3px;" /></span> 品 味 伴 客</a> -->
+
           <a href="/">幸 福 课 堂</a>
         </div>
         <div class="header-right pull-right">
@@ -63,18 +62,7 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="subheader animated">
-        <ul class="subheader-content">
-          <li class="active">
-            <%= link_to("所有商品", products_path) %>
-          </li>
-          <% Category.all.each do |category| %>
-            <li>
-              <%= link_to(category.name, products_path(category: category.name)) %>
-            </li>
-          <% end %>
-        </ul>
-      </div> -->
+
       <%= render "common/flashes" %>
     </header>
     <!-- End of header section -->
@@ -87,7 +75,7 @@
 
 <div class="banner-v2">
   <div class="banner-img">
-    <img src="https://ww1.sinaimg.cn/large/006tNc79ly1fddhnk2fwwj31kw0lrwiv.jpg" />
+    <img src="http://ww4.sinaimg.cn/large/006tNbRwly1ff8dc5dssij31kw11xb2h.jpg" />
   </div>
   <div class="banner-detail">
     <!-- <h2 class="banner-logo ">
@@ -95,14 +83,14 @@
     </h2> -->
     <div  class="banner-slogan">
       <h2>
-        给你的水加一份<span class="sub-slogan "> 甜度</span>
+        <span class="sub-slogan "> 幸福课堂</span>--关注心理成长的学校
       </h2>
     </div>
     <div class="sign-up-button">
       <% if !current_user %>
-        <%= link_to("马上注册", new_user_registration_path,  class: "btn btn-default") %>
+        <%= link_to("马上注册", new_user_registration_path,  class: "btn btn-info") %>
       <% else %>
-        <%= link_to(content_tag(:i, '马上行动', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-default") %>
+        <%= link_to(content_tag(:i, '马上行动', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-info") %>
       <% end %>
     </div>
   </div>
@@ -124,44 +112,44 @@
 <div id="service" class="row">
 
   <div class="module-name decorative">
-    <span>我们为您提供</span>
+    <span>我们能为您解决什么</span>
   </div>
 
   <div class="col-md-10 col-md-offset-1">
     <div class="row">
       <div class="col-md-4 ">
         <div class="service-item-img text-center">
-          <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fddbzdtxiij312s122444.jpg" class="round-image-160">
+          <img src="http://ww4.sinaimg.cn/large/006tNbRwly1ff9h6mc8lkj31kw11ygwz.jpg" class="round-image-160">
         </div>
 
         <div class="service-info text-center">
-          <h4>匠心手艺</h4><br />
-          <p>为您甄选最优质商品</p>
-          <p>免去您左顾右盼的烦恼  </p>
+          <h4>焦虑</h4><br />
+          <p>给身处大海深处焦虑的你一盏明灯</p>
+          <p>帮您快速找到静谧的海岸 </p>
         </div>
      </div>
 
       <div class="col-md-4">
         <div class="service-item-img text-center">
-          <img src="https://ww1.sinaimg.cn/large/006tNc79ly1fddc60tgtij30kt0ia74n.jpg" class="round-image-160">
+          <img src="http://ww2.sinaimg.cn/large/006tNbRwly1ff9ghn6gntj31kw11ynpe.jpg" class="round-image-160">
         </div>
 
         <div class="service-info text-center">
-          <h4>温暖时光</h4><br />
-          <p>为您准备最舒心的购物体验</p>
-          <p>从选购到使用，温暖相随</p>
+          <h4>迷茫</h4><br />
+          <p>给身处十字路口的你一个路标</p>
+          <p>为您指引正确的方向</p>
         </div>
 
       </div>
       <div class="col-md-4">
         <div class="service-item-img text-center">
-          <img src="https://ww1.sinaimg.cn/large/006tNc79ly1fddckx30w7j30rj0rogmv.jpg" class="round-image-160">
+          <img src="http://ww4.sinaimg.cn/large/006tNc79ly1ff9glngwrvj31kw11x4qw.jpg" class="round-image-160">
         </div>
 
         <div class="service-info text-center">
-          <h4>贴心服务</h4><br />
-          <p>为您的宝贝穿上铠甲</p>
-          <p>必定完璧送至您手中</p>
+          <h4>困惑</h4><br />
+          <p>给正在攫取知识的你一个宽阔明朗的平台</p>
+          <p>为您提供最优质清新的养分</p>
         </div>
 
     </div>
@@ -192,11 +180,17 @@
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
-
+                                    <%= link_to product_path(@p1) do %>
+                                    <% if @p1.photos.present? %>
+                                        <%= image_tag(@p1.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
                                   </div>
                                   <div class="info-block">
                                     <p >
-
+                                      <span  class="price" >￥ <%= @p1.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
                                           <% if !current_user.is_fan_of?(@p1) %>
@@ -209,7 +203,9 @@
                                             <% end %>
                                           <% end %>
                                         <% else %>
-
+                                          <%= link_to favorite_product_path(@p1), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p1.fans.count %>
+                                          <% end %>
                                         <% end %>
                                       </span>
                                     </p>
@@ -219,11 +215,18 @@
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
-
+                                    <%= link_to product_path(@p2) do %>
+                                    <% if @p2.photos.present? %>
+                                        <%= image_tag(@p2.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
                                   </div>
                                   <div class="info-block ">
                                     <p >
-
+                                      <span  class="price" >￥ <%= @p2.price %> </span>
+                                      <span class="like pull-right">
                                         <% if user_signed_in? %>
                                           <% if !current_user.is_fan_of?(@p2) %>
                                             <%= link_to favorite_product_path(@p2), :class => "like ",  method: :post do %>
@@ -235,7 +238,9 @@
                                             <% end %>
                                           <% end %>
                                         <% else %>
-
+                                          <%= link_to favorite_product_path(@p2), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p2.fans.count %>
+                                          <% end %>
                                         <% end %>
                                       </span>
                                     </p>
@@ -245,11 +250,17 @@
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
-
+                                    <%= link_to product_path(@p3) do %>
+                                    <% if @p3.photos.present? %>
+                                        <%= image_tag(@p3.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
                                   </div>
                                   <div class="info-block">
                                     <p >
-
+                                      <span  class="price" >￥ <%= @p3.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
                                           <% if !current_user.is_fan_of?(@p3) %>
@@ -262,7 +273,9 @@
                                             <% end %>
                                           <% end %>
                                         <% else %>
-
+                                          <%= link_to favorite_product_path(@p3), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p3.fans.count %>
+                                          <% end %>
                                         <% end %>
                                       </span>
                                     </p>
@@ -272,11 +285,17 @@
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
-
+                                    <%= link_to product_path(@p4) do %>
+                                    <% if @p4.photos.present? %>
+                                        <%= image_tag(@p4.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
                                   </div>
                                   <div class="info-block">
                                     <p >
-
+                                      <span  class="price" >￥ <%= @p4.price %> </span>
                                       <span class="like pull-right" >
                                         <% if user_signed_in? %>
                                           <% if !current_user.is_fan_of?(@p4) %>
@@ -289,7 +308,9 @@
                                             <% end %>
                                           <% end %>
                                         <% else %>
-
+                                          <%= link_to favorite_product_path(@p4), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p4.fans.count %>
+                                          <% end %>
                                         <% end %>
                                       </span>
                                     </p>
@@ -304,11 +325,17 @@
                           <div class="row">
                               <div class="col-sm-3"><div class="product-card-block">
                                 <div class="img-block">
-                                  <
+                                  <%= link_to product_path(@p5) do %>
+                                  <% if @p5.photos.present? %>
+                                      <%= image_tag(@p5.photos[0].image.thumb.url) %>
+                                  <% else %>
+                                    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                  <% end %>
+                                  <% end %>
                                 </div>
                                 <div class="info-block">
                                   <p >
-
+                                    <span  class="price" >￥ <%= @p5.price %> </span>
                                     <span class="like pull-right">
                                       <% if user_signed_in? %>
                                         <% if !current_user.is_fan_of?(@p5) %>
@@ -321,7 +348,9 @@
                                           <% end %>
                                         <% end %>
                                       <% else %>
-
+                                        <%= link_to favorite_product_path(@p5), :class => "like ",  method: :post do %>
+                                          <i class="fa fa-heart fa-lg"></i><%= @p5.fans.count %>
+                                        <% end %>
                                       <% end %>
                                     </span>
                                   </p>
@@ -331,11 +360,17 @@
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
-
+                                    <%= link_to product_path(@p6) do %>
+                                    <% if @p4.photos.present? %>
+                                        <%= image_tag(@p6.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
                                   </div>
                                   <div class="info-block">
                                     <p >
-
+                                      <span  class="price" >￥ <%= @p6.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
                                           <% if !current_user.is_fan_of?(@p6) %>
@@ -348,7 +383,9 @@
                                             <% end %>
                                           <% end %>
                                         <% else %>
-
+                                          <%= link_to favorite_product_path(@p6), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p6.fans.count %>
+                                          <% end %>
                                         <% end %>
                                       </span>
                                     </p>
@@ -358,11 +395,17 @@
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
-
+                                    <%= link_to product_path(@p7) do %>
+                                    <% if @p7.photos.present? %>
+                                        <%= image_tag(@p7.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
                                   </div>
                                   <div class="info-block">
                                     <p >
-
+                                      <span  class="price" >￥ <%= @p7.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
                                           <% if !current_user.is_fan_of?(@p7) %>
@@ -375,7 +418,9 @@
                                             <% end %>
                                           <% end %>
                                         <% else %>
-
+                                          <%= link_to favorite_product_path(@p7), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p7.fans.count %>
+                                          <% end %>
                                         <% end %>
                                       </span>
                                     </p>
@@ -385,11 +430,17 @@
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
-
+                                    <%= link_to product_path(@p8) do %>
+                                    <% if @p8.photos.present? %>
+                                        <%= image_tag(@p8.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
                                   </div>
                                   <div class="info-block">
                                     <p >
-
+                                      <span  class="price" >￥ <%= @p8.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
                                           <% if !current_user.is_fan_of?(@p8) %>
@@ -402,7 +453,9 @@
                                             <% end %>
                                           <% end %>
                                         <% else %>
-
+                                          <%= link_to favorite_product_path(@p8), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p8.fans.count %>
+                                          <% end %>
                                         <% end %>
                                       </span>
                                     </p>
@@ -428,11 +481,12 @@
   <!-- end of hot products -->
 
 
+
 <!-- customer feedback -->
 
 <div id="customer-feedback" class="row">
   <div class="module-name decorative">
-    <span>我们的铁粉说</span>
+    <span>我们的专业导师</span>
   </div>
 
   <div class="col-md-10 col-md-offset-1">
@@ -440,18 +494,18 @@
       <div class="col-md-4 ">
         <div class="fd-avatar-box text-center">
           <div class="fd-avatar-box-color-overlay"></div>
-          <img src="https://ww1.sinaimg.cn/large/006tNc79gy1fd7qeb8dqvj307y07gq2v.jpg" class="round-image-74">
+          <img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ff9ewho17tj30fs0fswfa.jpg" class="round-image-74">
         </div>
 
         <div class="quote-box-1">
           <p><i class="fa fa-quote-left pull-left" aria-hidden="true"></i></p><br>
           <p class="feedback-info text-center">
-            在伴客购买杯子，绝对是我最棒的体验了<br>
-            每个杯子都是外观美质量赞<br>
-            喝水真得变成了一种享受，谢谢伴客～<br>
+            微信公众号：Xdite黑客成长<br>
+            Facebook全球Hackathon冠军、打造全栈工程师的高手<br>
+            全栈营创始人、极速读书创始人<br>
           </p>
           <p class="feedback-info text-center" style="font-size:16px;">
-            - 顾客小萌
+            - Xdite
           </p>
           <p><i class="fa fa-quote-right pull-right" aria-hidden="true"></i></p>
         </div>
@@ -460,18 +514,18 @@
       <div class="col-md-4">
         <div class="fd-avatar-box text-center">
           <div class="fd-avatar-box-color-overlay"></div>
-          <img src="https://ww3.sinaimg.cn/large/006tNc79gy1fd7qed0swnj30b30alq32.jpg" class="round-image-74">
+          <img src="http://ww4.sinaimg.cn/large/006tNbRwgy1ff9ewn4328j304t06cq31.jpg" class="round-image-74">
         </div>
 
         <div class="quote-box-1">
           <p><i class="fa fa-quote-left pull-left" aria-hidden="true"></i></p><br>
           <p class="feedback-info text-center">
-            自从买了伴客保温杯<br>
-            现在外出旅游,带一壶水可以喝一整天<br>
-            而且保温效果非常持久<br>
+            微信公众号：学习学习再学习<br>
+            比特币大咖、连续创业者<br>
+            天使投资人、新生大学创始人<br>
           </p>
           <p class="feedback-info text-center" style="font-size:16px;">
-            - 顾客强仔
+            - 李笑来
           </p>
 
           <p><i class="fa fa-quote-right pull-right" aria-hidden="true"></i></p>
@@ -480,18 +534,18 @@
       <div class="col-md-4">
         <div class="fd-avatar-box text-center">
           <div class="fd-avatar-box-color-overlay"></div>
-          <img src="https://ww3.sinaimg.cn/large/006tNc79gy1fd7qee04w0j30b40b4jrj.jpg" class="round-image-74">
+          <img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ff9ewwgbp3j306w06wdfw.jpg" class="round-image-74">
         </div>
 
         <div class="quote-box-1">
           <p><i class="fa fa-quote-left pull-left" aria-hidden="true"></i></p><br>
           <p class="feedback-info text-center">
-            平时是个杯子控<br>
-            但每次要找到自己喜欢的都要花很多时间<br>
-            很开心伴客解决了我的苦恼<br>
+            微信公众号：罗辑思维<br>
+            自媒体视频脱口秀《罗辑思维》主讲人<br>
+            得到App创始人<br>
           </p>
           <p class="feedback-info text-center" style="font-size:16px;">
-            - 顾客晓琪
+            - 罗振宇
           </p>
           <p><i class="fa fa-quote-right pull-right" aria-hidden="true"></i></p>
         </div>
@@ -507,7 +561,7 @@
 
 <div id="call-to-action" class="row">
   <div class="text-center">
-    <%= link_to("马上购买 <i class='fa fa-arrow-right'></i>".html_safe, products_path, class: "btn btn-default btn-lg") %>
+    <%= link_to("立即听课 <i class='fa fa-arrow-right'></i>".html_safe, products_path, class: "btn btn-info btn-lg") %>
   </div>
 </div>
 
@@ -522,20 +576,20 @@
   </div>
   <div class="col-md-10 col-md-offset-1">
     <div class="col-md-3 col-sm-6">
-    <p class="sub-question"><b>Q：</b>杯子属于易碎物品，在邮递的过程中怎么保证完好无损呢？</p>
-    <p class="answer"><b>A：</b>伴客统一采用顺丰快递配送，我们的每一个商品都会严格包装，防止在运输的过程中破碎</p>
+    <p class="sub-question"><b>Q：</b>课程如何报名，如何缴费？</p>
+    <p class="answer"><b>A：</b>幸福课堂的上架课程均可添加进购物车，部分课程免费，付款课程付款成功后，即可参加该课程哦</p>
     </div>
     <div class="col-md-3 col-sm-6">
-    <p class="sub-question"><b>Q：</b>对于杯子的质感，你们会有把控吗？</p>
-    <p class="answer"><b>A：</b>伴客的每一款杯子都是很有质感的，我们的宗旨就是改变用户喝水的体验，所以质感方面都是严格把控的哦</p>
+    <p class="sub-question"><b>Q：</b>可以自主选择知名大咖来讲座吗？</p>
+    <p class="answer"><b>A：</b>幸福课堂为您提供最权威的业界大咖的幸福手册，您可以自主选择。如果您有更好的推荐，我们一定极力与他们合作，让您看到你心属的大咖为您提供他的幸福手册</p>
     </div>
     <div class="col-md-3 col-sm-6">
-      <p class="sub-question"><b>Q：</b>有的保温杯很有重量，不方便携带，而且保温效果不持久，你们有做改善吗？</p>
-      <p class="answer"><b>A：</b>伴客的每一款杯子，都追求的是轻巧、易携带，所以保温杯也是轻盈型的</p>
+      <p class="sub-question"><b>Q：</b>付费后可以退款吗？</p>
+      <p class="answer"><b>A：</b>幸福课堂为虚拟产品，如果您付款后，不给予退款哦</p>
     </div>
     <div class="col-md-3 col-sm-6">
-      <p class="sub-question"><b>Q：</b>很多人买杯子有时只是为了好看而已，你们的设计风格是怎样的？</p>
-      <p class="answer"><b>A：</b>伴客杯子的设计风格偏简易、清新范，重在给顾客一种简单的心情</p>
+      <p class="sub-question"><b>Q：</b>这里有线下活动吗？</p>
+      <p class="answer"><b>A：</b>幸福课堂为满足伙伴们的需求，会定期在举行线下交流及公开讲座，让幸福贴近生活，走进你我</p>
     </div>
   </div>
 </div>
@@ -557,9 +611,9 @@
 <div class="footer">
   <div class="copyright">
     <div class="design">
-      <span><a href="https://github.com/megychen/JD-Store-Competition" target="_blank">Github仓库</a></span>  <span><%= link_to '关于我们', about_path %></span>  <span><%= link_to '联系我们', about_path %></span>
-      <p>@Copyright 2017 品味伴客 由<span>陈慧娟</span> 和 <span>刘慧玲</span>共同打造</p>
-      <p>再次感谢您的光临</p>
+      <span><a href="https://github.com/cinly/jdstore" target="_blank">Github仓库</a></span>  <span><%= link_to '关于我们', about_path %></span>  <span><%= link_to '联系我们', about_path %></span>
+      <p>@Copyright 2017 幸福课堂 由<span>马鑫磊</span> 和 <span>trony</span>共同打造</p>
+      <p>幸福伴您一生</p>
     </div>
   </div>
 </div>

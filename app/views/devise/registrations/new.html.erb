@@ -1,40 +1,21 @@
-<div style="margin-top:150px;margin-bottom:30px;line-height:275%;">
-    <h1 class="text-center", style="color:#584b4f;">用户注册</h1>
-</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
-<div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
-  <%= devise_error_messages! %>
-</div>
+    <div class="col-md-4 col-md-offset-4 col-sm-8 col-md-offset-2 user_setup_content">
+      <h2 class="text-center", style="color:#0097A7;;" >用户注册</h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
 
-<div class="form-group">
-    <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
-        <%= f.email_field :email, label: "邮箱", autofocus: true , class: "form-control" , :style => "border: solid 1px white;", placeholder: "邮箱"%>
-    </div>
-</div>
+      <div class="form-inputs">
+        <%= f.input :email, label: "邮箱", autofocus: true , class: "form-control" , :style => "border: solid 1px white;", placeholder: "请输入有效邮箱"%>
+        <%= f.input :password, label: "密码", required: true, class: "form-control", placeholder: ("至少#{@minimum_password_length}位字符长度" if @minimum_password_length) %>
+        <%= f.input :password_confirmation, label: "密码确认", class: "form-control", placeholder: ("至少#{@minimum_password_length}位字符长度" if @minimum_password_length), required: true %>
+        <%= f.input :remember_me, label: "记住密码", as: :boolean if devise_mapping.rememberable? %>
+      </div>
 
-<div class="form-group">
-    <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
-      <%= f.password_field :password, label: "密码", required: true, class: "form-control", placeholder: "密码", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
-      <%= f.password_field :password_confirmation, label: "密码确认", class: "form-control", placeholder: "确认密码", required: true %>
-    </div>
-</div>
-
-<div class="form-group">
-  <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
-      <%= f.submit "注册", class: "btn btn-primary",:style => "border: none;color:white;width:100%;background-color:#584b4f;border-radius:50px;" %>
-  </div>
-</div>
-
-<div class="form-group">
-  <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
+      <div class="form-actions">
+        <%= f.submit "注册", class: "btn btn-primary" ,:style => "border: none;color:white;width:100%;background-color:#0097A7;border-radius:50px;"%>
+      </div><br>
       <%= render "devise/shared/links" %>
+    <% end %>
+
   </div>
-</div>
-<% end %>

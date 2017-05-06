@@ -235,7 +235,7 @@ ul.subheader-content {
     position: relative;
     z-index:10;
     .banner-logo {
-      color: #fff;
+      color: #F0FFF0;
       font-family: 'Dancing Script', cursive;
       font-size: 69px;
     }
@@ -243,9 +243,9 @@ ul.subheader-content {
       position: relative;
       color: #fff;
       margin-top: 120px;
-      margin-left: 30%;
+      margin-left: 30%; //slogan位置
       font-weight: 400;
-      width: 400px;
+      width: 600px;//slogan长度
     }
     .sub-slogan {
       margin-top: 40px;

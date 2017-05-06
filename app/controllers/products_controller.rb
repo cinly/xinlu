@@ -56,6 +56,13 @@ class ProductsController < ApplicationController
     if @query_string.present?
       @products = search_params
     end
+
+#     if @query_string.present?
+#   # 显示符合关键字的公开职位 #
+#   search_result = Product.ransack(@search_criteria).result(:distinct => true)
+#   # @products = search_result.paginate(:page => params[:page], :per_page => 10 )
+#   # 随机推荐五个职位 #
+# end
   end
 
   def favorite
@@ -81,7 +88,7 @@ class ProductsController < ApplicationController
   private
 
   def search_params
-    Product.ransack({:title_or_description_cont => @query_string}).result(distinct: true)
+    Product.ransack({:title_or_description_or_category_id_cont => @query_string}).result(distinct: true)
   end
 
 end

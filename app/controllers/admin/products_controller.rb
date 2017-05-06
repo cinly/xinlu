@@ -37,7 +37,7 @@ class Admin::ProductsController < ApplicationController
           @photo = @product.photos.create(:image => a)
         end
       end
-      redirect_to admin_products_path
+      redirect_to admin_products_path,notice:"创建成功！"
     else
       render :new
     end
@@ -52,10 +52,10 @@ class Admin::ProductsController < ApplicationController
         @picture = @product.photos.create(:image => a)
       end
       @product.update(product_params)
-      redirect_to admin_products_path
+      redirect_to admin_products_path,notice: "更新成功!"
 
     elsif @product.update(product_params)
-      redirect_to admin_products_path
+      redirect_to admin_products_path,notice: "更新成功!"
     else
       render :edit
     end
@@ -71,6 +71,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :category_id, :size)
+    params.require(:product).permit(:title, :description, :quantity, :price, :category_id, :size, :image)
   end
 end

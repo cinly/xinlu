@@ -35,7 +35,7 @@
 
  }
 
- /* common flash */
+ //======== common flash ======//
 
 div.alert {
   margin-top: 0px;
@@ -57,15 +57,73 @@ div.alert {
   }
 }
 
-/* login page */
 
-.login-page {
-  margin-top:150px;
+//===== user ====
+.user_setup{
+  margin-top:60px;
   margin-bottom:30px;
-  line-height:275%;
+   height: 750px;
+   //background: image_url("g.jpg") no-repeat scroll top center/ cover;
 }
 
- /* common navbar */
+
+.user_setup_content{
+   background: #fff;
+   margin-top: 135px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   box-shadow: 1px 3px 5px #333;
+   border: 5px solid #666;
+   border-radius: 25px;
+
+   opacity:0.95;
+   filter:alpha(opacity=95);
+
+   h2{
+     text-align: center;
+   }
+
+   .psw{
+     float: right;
+     margin-top: -33px;
+     position: relative;
+   }
+
+   .account{
+     text-align: center;
+   }
+
+   .form-inputs{
+     margin-top: 25px;
+   }
+
+   .form-actions{
+     text-align: center;
+     margin-top: 35px;
+     margin-bottom: 25px;
+
+     .button{
+       color: #fff;
+       background-color: #0097A7;
+       border-color: #4A6BB5;
+       border-radius:50px;
+       font-size: 16px;
+       letter-spacing: 1px;
+       width: 100%;
+     }
+     //:style => "border: none;color:white;width:100%;background-color:#0097A7;border-radius:50px;
+     .button:hover{
+         background-color: #0097A7;
+         border-color: #4A99B5;
+         color: #fff;
+     }
+   }
+}
+
+
+
+
+ //======= common navbar ======//
 
 .navbar-default {
   margin-bottom: 0;
@@ -79,7 +137,7 @@ div.alert {
         transition: 0.35s;
       }
       a:hover {
-        color: #D0CFCE;
+        color: #D0CFCE;//幸福课堂字体变色
       }
     }
     .navbar-nav li a {
@@ -88,7 +146,7 @@ div.alert {
       transition: 0.35s;
     }
     .navbar-nav li a:hover {
-      color: #D0CFCE;
+      color: #D0CFCE;//其它字体变色
       text-decoration: none
     }
 
@@ -97,7 +155,7 @@ div.alert {
       padding-top: 0;
       a {
         text-align: center;
-        color: #000;
+        color: #8D6E63//下拉菜单字体颜色
       }
       li.divider:last-child {
         display: none;
