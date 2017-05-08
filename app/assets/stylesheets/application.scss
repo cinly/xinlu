@@ -58,7 +58,7 @@ div.alert {
 }
 
 
-//===== user ====
+//========= user ========//
 .user_setup{
   margin-top:60px;
   margin-bottom:30px;
@@ -128,7 +128,7 @@ div.alert {
 .navbar-default {
   margin-bottom: 0;
   border-radius: 0;
-  background: rgb(88,75,79);
+  background: #9CCC65;//====navbar
     .navbar-header {
       margin-left: 9%;
       a {
@@ -171,7 +171,7 @@ div.alert {
 
  }
 
-/*  SEARCH-BAR */
+//====== SEARCH-BAR =======//
 
 .products-search-form {
   margin-top: 10px;
@@ -191,14 +191,14 @@ div.alert {
 }
 
 
-/* EDIT PROFILR */
+//========== EDIT PROFILR======//
 
 .edit-profile {
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
-/* Media Quries */
+//========= Media Quries ========//
 
 @media screen and (max-width: 1221px) {
   .navbar-default .navbar-header {
@@ -209,7 +209,7 @@ div.alert {
   }
 }
 
-/* common/footer*/
+//======== common/footer========//
 
 .page-footer {
   width: 50%;
@@ -219,7 +219,7 @@ div.alert {
   border-top: 1px solid #D3D3D3;
 }
 
-/* index */
+//============ index ===========//
 
 .index {
   cursor: pointer;
@@ -228,7 +228,7 @@ div.alert {
   position: fixed;
   bottom: 200px;
   right: 30px;
-  background-color: #d8c095;
+  background-color: #4CAF50;
   .fa-arrow-up {
     color: #fff;
     margin-left: 13px;
