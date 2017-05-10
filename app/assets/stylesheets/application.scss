@@ -23,14 +23,14 @@
  @import "bootstrap";
  @import "font-awesome";
  @import "social-share-button";
- @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+
 
 
 
  body {
    overflow-x:hidden;
    position: relative;
-   background-color: rgb(250,246,236);
+   background-color: #F1F8E9;
    box-sizing: border-box;
 
  }
@@ -228,7 +228,7 @@ div.alert {
   position: fixed;
   bottom: 200px;
   right: 30px;
-  background-color: #4CAF50;
+  background-color: #AED581;
   .fa-arrow-up {
     color: #fff;
     margin-left: 13px;

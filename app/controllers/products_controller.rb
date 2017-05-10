@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     else
       @products = case params[:order]
       when 'by_price'
-          Product.all.order("price DESC")
+        Product.all.order("price DESC")
       when 'by_fans'
         Product.all.sort_by {|product| product.fans.count}.reverse
       else
