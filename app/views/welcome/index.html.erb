@@ -4,6 +4,10 @@
     <header class="main-header">
       <div class="header-inner">
 
+        <div class="header-center">
+          <a href="/">幸 福 课 堂</a>
+        </div>
+
         <div class="header-left pull-left">
           <!-- Search area -->
           <%= form_tag search_products_path , :method => :get, :class => "form-search" do %>
@@ -14,15 +18,15 @@
           <% end %>
           <!-- End Search -->
         </div>
-        <div class="header-center">
 
-          <a href="/">幸 福 课 堂</a>
-
-        </div>
         <div class="header-right pull-right">
           <ul class="nav navbar-nav navbar-right">
 
-
+            <li>
+              <%= link_to products_path do %>
+                 <i class="fa fa-home fa-lg"></i>精彩课程
+              <% end %>
+            </li>
             <li>
               <%= link_to carts_path do %>
                 购物车 <i class="fa fa-shopping-cart fa-lg"></i> (<%= current_cart.products.count %>)
@@ -51,14 +55,14 @@
                     </li>
                   <% end %>
                   <li>
-                    <%= link_to(content_tag(:i, " 我的订单", class: "fa fa-history"), account_orders_path) %>
+                    <%= link_to(content_tag(:i, " 我的课程", class: "fa fa-history"), account_orders_path) %>
                   </li>
                   <li>
                     <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
                   </li>
                   <li><%= link_to(content_tag(:i, " 编辑账户", class: "fa fa-pencil-square-o"),edit_user_registration_path) %></li>
                   <li>
-                    <%= link_to(content_tag(:i, " 账户登出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
+                    <%= link_to(content_tag(:i, " 账户退出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
                   </li>
                 </ul>
               </li>
@@ -75,83 +79,87 @@
 
 <!---  end ----->
 
-
-
-<!--- Header section  -->
-<div class="container-fluid">
-  <div class="row">
-    <header class="main-header">
-      <div class="header-inner">
-        <div class="header-left pull-left">
-          <!-- Search area -->
-          <%= form_tag search_products_path , :method => :get, :class => "form-search" do %>
-            <input type="text", class="search-input", name="q" value="<%= params[:q] %>" placeholder="请输入关键词搜索...">
-            <button type="submit" class="search-icon">
-              <span class="fa fa-search fa-lg"></span>
-            </button>
-          <% end %>
-          <!-- End Search -->
+<!--- keng ----->
+<div class="header_placeholder h80"></div>
+ <div class="banner-v2">
+  <div class="banner-img">
+    <div id="myCarousel-0" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel-0" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel-0" data-slide-to="1"></li>
+        <li data-target="#myCarousel-0" data-slide-to="2"></li>
+        <li data-target="#myCarousel-0" data-slide-to="3"></li>
+        <li data-target="#myCarousel-0" data-slide-to="4"></li>
+        <li data-target="#myCarousel-0" data-slide-to="5"></li>
+     </ol>
+     <div class="carousel-inner">
+        <div class="item active">
+         <a href="javacript:;">
+          <img src=" http://ww4.sinaimg.cn/large/006tNc79ly1ffg0sv68muj31hc10cwkv.jpg" />
+          <div class="carousel-caption"></div>
+         </a>
         </div>
-        <div class="header-center">
-
-          <a href="/">幸 福 课 堂</a>
-
+        <div class="item">
+         <a href="javacript:;">
+          <img src=" http://ww3.sinaimg.cn/large/006tNbRwly1ffe8z2y58oj31hc0z2wkl.jpg" />
+          <div class="carousel-caption"></div>
+         </a>
         </div>
-        <div class="header-right pull-right">
-          <ul class="nav navbar-nav navbar-right">
-
-            <li>
-
-              <%= link_to products_path do %>
-                 <i class="fa fa-home fa-lg"></i>精彩课程
-              <% end %>
-            </li>
-            <% if !current_user %>
-              <li>
-                <div class="log-in">
-                  <%= link_to("登录", new_user_session_path, class: "btn btn-xs header-user-item") %>
-                </div>
-              </li>
-            <% else %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <% if current_user.nickname.present? %>
-                    Hi, <%= current_user.nickname %>
-                  <% else %>
-                    Hi, <%= current_user.email %>
-                  <% end %>
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <% if current_user.admin? %>
-                    <li>
-                      <%= link_to(content_tag(:i, " 后台管理", class: "fa fa-lock"), admin_products_path) %>
-                    </li>
-                  <% end %>
-                  <li>
-                    <%= link_to(content_tag(:i, " 我的订单", class: "fa fa-history"), account_orders_path) %>
-                  </li>
-                  <li>
-                    <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
-                  </li>
-                  <li><%= link_to(content_tag(:i, " 编辑账户", class: "fa fa-pencil-square-o"),edit_user_registration_path) %></li>
-                  <li>
-                    <%= link_to(content_tag(:i, " 账户登出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
-                  </li>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
+        <div class="item">
+         <a href="javacript:;">
+          <img src=" http://ww4.sinaimg.cn/large/006tNbRwly1ffe0aio6pqj30ci045glo.jpg" />
+          <div class="carousel-caption"></div>
+         </a>
+        </div>
+        <div class="item">
+         <a href="javacript:;">
+          <img src=" http://ww2.sinaimg.cn/large/006tNbRwly1ffe0aaotvpj30ci04vdfw.jpg" />
+          <div class="carousel-caption"></div>
+         </a>
+        </div>
+        <div class="item">
+         <a href="javacript:;">
+          <img src=" http://ww1.sinaimg.cn/large/006tNbRwly1ffe0bc9g0tj30ci06yglq.jpg" />
+          <div class="carousel-caption"></div>
+         </a>
+        </div>
+        <div class="item">
+         <a href="javacript:;">
+          <img src=" http://ww3.sinaimg.cn/large/006tNc79gy1ffg0nhqvgdj31hc0yc43o.jpg" />
+          <div class="carousel-caption"></div>
+         </a>
         </div>
       </div>
+    </div>
+  </div>
 
-      <%= render "common/flashes" %>
-    </header>
+<div class="banner-detail">
+  <!-- <h2 class="banner-logo ">
+    banke
+  </h2> -->
+  <div  class="banner-slogan">
+    <h1>
+      <span class="sub-slogan"> 幸福课堂</span>
+
+      <p>————关注心理成长的学校</p>
+    </h1>
+    <!--- keng 1------>
+
+
+    <!-- end keng 1 ---->
 
   </div>
-</div>
+  <div class="welcome-button">
+      <%= link_to(content_tag(:i, '马上行动', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-primary-welcome") %>
+   </div>
+  </div>
+ </div>
 
-<!---  end ----->
+
+
+
+
+<!-- end keng ----->
 
 <!-- hot-products -->
 
@@ -166,11 +174,15 @@
 
                   <!-- Carousel items -->
                   <div class="carousel-inner">
+
                       <div class="item active">
                           <div class="row">
+
                               <div class="col-sm-3">
                                 <div class="product-card-block">
+
                                   <div class="img-block">
+
                                     <%= link_to product_path(@p1) do %>
                                     <% if @p1.photos.present? %>
                                         <%= image_tag(@p1.photos[0].image.thumb.url) %>
@@ -178,10 +190,12 @@
                                       <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
                                     <% end %>
                                     <% end %>
+
                                   </div>
                                   <div class="info-block">
+
                                     <p >
-                                      <span> <%= @p1.title %> </span>
+                                      <span><%= link_to(@p1.title, product_path(@product1)) %></span>
                                       <span  class="price" >￥ <%= @p1.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -217,7 +231,7 @@
                                   </div>
                                   <div class="info-block ">
                                     <p >
-                                      <span> <%= @p2.title %> </span>
+                                      <span> <%= link_to(@p2.title, product_path(@product2))  %> </span>
                                       <span  class="price" >￥ <%= @p2.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -253,7 +267,7 @@
                                   </div>
                                   <div class="info-block">
                                     <p >
-                                      <span> <%= @p3.title %> </span>
+                                      <span> <%= link_to(@p3.title, product_path(@product3))  %> </span>
                                       <span  class="price" >￥ <%= @p3.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -289,7 +303,7 @@
                                   </div>
                                   <div class="info-block">
                                     <p >
-                                      <span> <%= @p4.title %> </span>
+                                      <span> <%= link_to(@p4.title, product_path(@product4))  %> </span>
                                       <span  class="price" >￥ <%= @p4.price %> </span>
                                       <span class="like pull-right" >
                                         <% if user_signed_in? %>
@@ -318,8 +332,10 @@
                       <!--/item-->
                       <div class="item">
                           <div class="row">
-                              <div class="col-sm-3"><div class="product-card-block">
+                              <div class="col-sm-3">
+                                <div class="product-card-block">
                                 <div class="img-block">
+
                                   <%= link_to product_path(@p5) do %>
                                   <% if @p5.photos.present? %>
                                       <%= image_tag(@p5.photos[0].image.thumb.url) %>
@@ -327,10 +343,12 @@
                                     <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
                                   <% end %>
                                   <% end %>
+
                                 </div>
                                 <div class="info-block">
+
                                   <p >
-                                    <span> <%= @p5.title %> </span>
+                                    <span> <%= link_to(@p5.title, product_path(@product5))  %> </span>
                                     <span  class="price" >￥ <%= @p5.price %> </span>
                                     <span class="like pull-right">
                                       <% if user_signed_in? %>
@@ -350,12 +368,14 @@
                                       <% end %>
                                     </span>
                                   </p>
+
                                 </div>
                               </div>
                               </div>
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
+
                                     <%= link_to product_path(@p6) do %>
                                     <% if @p4.photos.present? %>
                                         <%= image_tag(@p6.photos[0].image.thumb.url) %>
@@ -363,10 +383,12 @@
                                       <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
                                     <% end %>
                                     <% end %>
+
                                   </div>
                                   <div class="info-block">
+
                                     <p >
-                                      <span> <%= @p6.title %> </span>
+                                      <span> <%= link_to(@p6.title, product_path(@product6))  %> </span>
                                       <span  class="price" >￥ <%= @p6.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -386,12 +408,14 @@
                                         <% end %>
                                       </span>
                                     </p>
+
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
+
                                     <%= link_to product_path(@p7) do %>
                                     <% if @p7.photos.present? %>
                                         <%= image_tag(@p7.photos[0].image.thumb.url) %>
@@ -399,10 +423,12 @@
                                       <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
                                     <% end %>
                                     <% end %>
+
                                   </div>
                                   <div class="info-block">
+
                                     <p >
-                                      <span> <%= @p7.title %> </span>
+                                      <span> <%= link_to(@p7.title, product_path(@product7))  %> </span>
                                       <span  class="price" >￥ <%= @p7.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -422,12 +448,14 @@
                                         <% end %>
                                       </span>
                                     </p>
+
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-3">
                                 <div class="product-card-block">
                                   <div class="img-block">
+
                                     <%= link_to product_path(@p8) do %>
                                     <% if @p8.photos.present? %>
                                         <%= image_tag(@p8.photos[0].image.thumb.url) %>
@@ -435,10 +463,12 @@
                                       <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
                                     <% end %>
                                     <% end %>
+
                                   </div>
                                   <div class="info-block">
+
                                     <p >
-                                      <span> <%= @p8.title %> </span>
+                                      <span> <%= link_to(@p8.title, product_path(@product8))  %> </span>
                                       <span  class="price" >￥ <%= @p8.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -456,16 +486,19 @@
                                             <i class="fa fa-heart fa-lg"></i><%= @p8.fans.count %>
                                           <% end %>
                                         <% end %>
+
                                       </span>
                                     </p>
+
                                   </div>
+
                                 </div>
                               </div>
+
                           </div>
                           <!--/row-->
                       </div>
                       <!--/item-->
-
 
                   </div>
                   <!--/carousel-inner-->
@@ -701,7 +734,7 @@
 <div class="footer">
   <div class="copyright">
     <div class="design">
-      <span><a href="https://github.com/cinly/jdstore" target="_blank">Github仓库</a></span>  <span><%= link_to '关于我们', about_path %></span>  <span><%= link_to '联系我们', about_path %></span>
+      <span><%= link_to '关于我们', about_path %></span>  <span><%= link_to '联系我们', about_path %></span>
       <p>@Copyright 2017 幸福课堂 由<span>马鑫磊</span> 和 <span>trony</span>共同打造</p>
       <p>幸福伴您一生</p>
     </div>

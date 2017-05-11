@@ -60,8 +60,11 @@ $(".hover").mouseleave(
 
 
 /* carousel effect  */
+$(document).ready(function() {
+    $('#myCarousel-0').carousel({interval: 4000})
+    $(window).trigger('scroll') // 窗口 触发一下滚动事件
+});
 
-// $('.carousel').carousel()
 
 /* scroll effect  */
 (function ($) {
@@ -106,3 +109,5 @@ $(document).on('click', '.index', function () {
 $(document).ready(function() {
   $('.service-slogan p').fadeIn("slow");
 });
+
+//--------- keng -----------//

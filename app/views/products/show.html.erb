@@ -34,7 +34,7 @@
       </div>
       <div class="price-service">
         <p class="price"> 价格<span class="rmb">￥</span><span class="price"><%= @product.price %></span></p>
-        <p class="service">服务 <span class="service-detail">虚拟产品一经售出不予退货 | 48小时快速退款 </span></p>
+        <p class="service">说明 <span class="service-detail">本产品为虚拟产品 一经售出不予退款  </span></p>
       </div>
       <div class="quantity-size">
         <p class="quantity">库存 <span class="quantity"><%= @product.quantity %></span> </p>
@@ -101,19 +101,19 @@
         <div class="tabbable-line">
           <ul class="nav nav-tabs ">
             <li class="active">
-              <a href="#tab_default_1" data-toggle="tab">宝贝详情 </a>
+              <a href="#tab_default_1" data-toggle="tab">课程详情 </a>
             </li>
             <li>
-              <a href="#tab_default_2" data-toggle="tab">宝贝评价(<%= "#{@reviews.length}" %>) </a>
+              <a href="#tab_default_2" data-toggle="tab">课程评价(<%= "#{@reviews.length}" %>) </a>
             </li>
           </ul>
         </div>
         <div class="tab-content">
           <div class="tab-pane active" id="tab_default_1">
              <p class="product-description"><%= @product.description %></p>
-             <p class="product-description2 text-center">产品展示</p>
+             <p class="product-description2 text-center">课程展示</p>
              <%= image_tag(@product.photos[0].image.url) %>
-             <p class="product-description2 text-center">产品细节</p>
+             <p class="product-description2 text-center">课程细节</p>
              <div class="row">
                <div class="col-md-6 product-show-detail">
                  <%= image_tag(@product.photos[0].image.medium.url) %>
@@ -130,17 +130,17 @@
              </div>
              <div class="faq">
                <p class="faq-title text-center">常见问题</p>
-               <p class="question">使用什么快递发货？</p>
-               <p class="answer">伴客默认使用顺丰快递发货，配送范围覆盖全国大部分地区（港澳台地区除外）。</p>
-               <p class="question">如何申请退货？</p>
+               <p class="question">课程购买后何时开课？</p>
+               <p class="answer">普通个人课程一经购买，可立即学习；参加团体课程学习的除外，团体课程开课时间请留意课程须知。</p>
+               <p class="question">如何参加团体课程？</p>
                <p class="answer">
-                 1.自收到商品之日起7日内，顾客可申请无忧退货，退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账；<br />
-                 2.退货流程：<br />
-                 确认收货-申请退货-客服审核通过-用户寄回商品-仓库签收验货-退款审核-退款完成；<br />
-                 3.因品味伴客产生的退货，如质量问题，退货邮费由品味伴客承担，退款完成后钱款将沿原渠道返还。因客户个人原因产生的退货，购买和寄回运费由客户个人承担。<br />
+                 1.团体课程会在课程须知中阐明为团体课，达到团体人数或到达开课日便会立即开课；<br />
+                 2.开课流程：<br />
+                 确定开课日期后，以线下或线上授课方式，统一开课；<br />
+                 3.自购买之日起，七天之内，因不可抗拒的特殊原因，产生的退订事宜，可联系工作人员协商；开课前七天产生的退订事宜，不予处理。<br />
                </p>
                <p class="question">如何开具发票？</p>
-               <p class="answer">如需开具普通发票，请在下单时联系客服办理，我们将虽货物一起快递给您；</p>
+               <p class="answer">如需开具发票，请在下单时联系客服办理，发票为增值税普通发票，一经开出，不予修改和重开，请您核实好您的发票信息；</p>
              </div>
           </div>
           <div class="tab-pane" id="tab_default_2">
@@ -154,7 +154,7 @@
               </div>
             <% end %>
             <% if @reviews.blank? %>
-              <p>这个宝贝还没有人评论，来为它添加一个吧！</p>
+              <p>本次课程还没有人评论，来为它添加一个吧！</p>
             <% else %>
               <% @reviews.each do |review| %>
                 <div class="reviews">
@@ -183,7 +183,7 @@
   <!-- End of product description & reviews -->
   <!-- Start of proposal products -->
   <div class="col-md-4 proposal-product">
-    <h4 style="padding-top:10px;">为您推荐的宝贝</h4>
+    <h4 style="padding-top:10px;">为您推荐的课程</h4>
     <hr />
     <div id="pins" class="transitions-enabled">
       <% Product.limit(4).sort_by{|product| -product.fans.count}.each do |product| %>

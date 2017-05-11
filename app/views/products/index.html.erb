@@ -1,6 +1,6 @@
 <div class="products-1">
   <%= render "common/flashes" %>
-  <h3 class="introduction">给你的生活添一份</h3>
+  <h3 class="introduction">给你的生活多添一份</h3>
   <h4 class="introduction-sub">幸福</h4>
   <hr>
 
@@ -8,6 +8,7 @@
     <span><%= link_to("热门", products_path(:order => "by_viewed")) %><i class="fa fa-arrow-down" ></i></span>
     <span><%= link_to("收藏", products_path(:order => "by_fans")) %><i class="fa fa-arrow-down"></i></span>
     <span><%= link_to("最新课程", products_path) %><i class="fa fa-arrow-down"></i></span>
+    <!-- <span><%= link_to("销量", products_path(:order => "by_product_quantity")) %><i class="fa fa-arrow-down"></span> -->
   </div>
 
   <div class="row">
