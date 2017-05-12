@@ -19,6 +19,7 @@
   </div>
   <div class="panel-body" style="padding:5px;">
     <p >
+      <span><%= link_to(product.title, product_path(product)) %></span>
       <span  class="price pull-left" >￥ <%= product.price %> </span>
       <span class="pull-right">
         <% if user_signed_in? %>

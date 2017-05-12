@@ -26,7 +26,7 @@ html, body {
   height: 60px;// navbar -high
   text-align: center;
   background: #9CCC65;
-  border-bottom: 1px solid #FFF176;
+  border-bottom: 1px solid #689F38;
   padding: 15px;
   z-index: 1000;
 }
@@ -291,7 +291,7 @@ ul.subheader-content {
 
 
 .module-name {
-    margin-top: 100px;//动图距离
+    margin-top: 50px;//动图距离
     margin-bottom: 45px;
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -389,11 +389,11 @@ ul.subheader-content {
  }
  .info-block{
    padding: 5px 5px 1px 5px;
-   color:#f5be7e;
+   color:#ef9a9a;
    background-color: #fff;
    p>span.like{
      a {
-       color:#f5be7e;
+       color:#ef9a9a;
      }
    }
  }
@@ -485,14 +485,14 @@ opacity: 1;
     text-decoration: none;
   }
   span.price{
-    color: rgb(245,190,126);
+    color: #ef9a9a;
   }
   span{
     a.like{
       color:#eee;
     }
     a.unlike{
-      color: rgb(245,190,126);
+      color: #ef9a9a;
     }
   }
 }
@@ -579,9 +579,9 @@ opacity: 1;
   color: #aaa;//字体颜色
   font-family: 200;
   .col-md-3 {
-    padding: 20px;
+    padding: 20px;//与线的距离
     border-right: 1px solid #aaa;
-    height: 175px;
+    height: 200px;
   }
   .col-md-3:last-child {
     border: none;

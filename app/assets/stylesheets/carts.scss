@@ -74,19 +74,19 @@ label.actual-pay {
   width: 45px;
   background-color: #fff;
   border-radius: 5px;
-  color: #f5be7e;
+  color: #ef5350;
 }
 
 .product-quantity select {
   height: 30px;
   background-color: #fff;
-  color: #f5be7e;
+  color: #000;
   border-radius: 0;
 }
 
 .product-removal .remove-product {
   margin-top: 45px;
-  background-color: #f5be7e;
+  background-color: #ef5350;
   a {
     color: #fff;
   }
@@ -106,14 +106,14 @@ label.actual-pay {
 
 a.checkout-btn {
   padding: 10px 25px;
-  background-color: #d86a6a;
+  background-color: #ef5350;
   color: #fff;
 }
 
 a.checkout-btn:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #d38585;
+  background-color: #ef5350;
 }
 
 
