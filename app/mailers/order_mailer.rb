@@ -3,7 +3,7 @@ class OrderMailer < ApplicationMailer
     @order       = order
     @user        = order.user
     @product_lists = @order.product_lists
-    mail(to: @user.email , subject: "[Banke] 感谢您完成本次的下单，以下是您这次购物明细 #{order.token}")
+    mail(to: @user.email , subject: "[Psy-proc] 感谢您完成本次的下单，以下是您这次购物明细 #{order.token}")
   end
 
   def apply_cancel(order)
@@ -11,22 +11,22 @@ class OrderMailer < ApplicationMailer
     @user        = order.user
     @product_lists = @order.product_lists
 
-    mail(to: "admin@test.com" , subject: "[Banke] 用户#{order.user.email}申请取消订单 #{order.token}")
+    mail(to: "123@test.com" , subject: "[Psy-proc] 用户#{order.user.email}申请取消订单 #{order.token}")
   end
 
-  def notify_ship(order)
-    @order        = order
-    @user         = order.user
-    @product_lists = @order.product_lists
-
-    mail(to: @user.email, subject: "[Banke] 您的订单 #{order.token}已发货")
-  end
+  # def notify_ship(order)
+  #   @order        = order
+  #   @user         = order.user
+  #   @product_lists = @order.product_lists
+  #
+  #   mail(to: @user.email, subject: "[Psy-proc] 您的订单 #{order.token}已发货")
+  # end
 
   def notify_cancel(order)
     @order        = order
     @user         = order.user
     @product_lists = @order.product_lists
 
-    mail(to: @user.email, subject: "[Banke] 您的订单 #{order.token}已取消")
+    mail(to: @user.email, subject: "[Psy-proc] 您的订单 #{order.token}已取消")
   end
 end

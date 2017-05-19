@@ -225,7 +225,7 @@ ul.subheader-content {
     img{
       width:50%;
       //height: 0%;
-      //opacity:0.7;
+      opacity:0.5;
 
     }
   }
@@ -336,42 +336,9 @@ ul.subheader-content {
 }
 
 
-//======= our service ======//
-
-#service {
- padding-bottom: 50px;
- background-color:#fff;
- padding-top: 20px;
- .col-md-4 {
-   padding: 15px 10px;
- }
-}
-.service-item-img{
-   img { width: 100%;
-     margin:1px auto;
-     z-index: 15;}
-   .round-image-160 {
-     background-color: white;
-     border: 1px solid  #faf6ec;
-     border-radius: 80px;
-     -moz-border-radius: 80px;
-     -webkit-border-radius: 80px;
-     height: 160px;
-     width: 160px;
-     overflow: hidden;
-     text-align: center;
-   }
-
-}
-.service-info{
-  padding-top:45px;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-
 //======= recommended products =======//
 #hot-products{
-  background-color: #DCEDC8;
+  background-color: #fff;
 }
 #hot-products{
   margin: 0 auto;
@@ -418,6 +385,40 @@ font-size: 40px;
 color: #fff;
 opacity: 1;
 }
+
+//======= our service ======//
+
+#service {
+ padding-bottom: 50px;
+ background-color:#F1F8E9;
+ padding-top: 20px;
+ .col-md-4 {
+   padding: 15px 10px;
+ }
+}
+.service-item-img{
+   img { width: 100%;
+     margin:1px auto;
+     z-index: 15;}
+   .round-image-160 {
+     background-color: white;
+     border: 1px solid  #faf6ec;
+     border-radius: 80px;
+     -moz-border-radius: 80px;
+     -webkit-border-radius: 80px;
+     height: 160px;
+     width: 160px;
+     overflow: hidden;
+     text-align: center;
+   }
+
+}
+.service-info{
+  padding-top:45px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
 
 //---------- pins -----------//
 
@@ -501,7 +502,7 @@ opacity: 1;
 /* resources */
 #resources {
   padding-bottom: 50px;
-  background-color:#F1F8E9;
+  background-color:#fff;
   padding-top: 20px;
   .col-md-4 {
     padding: 15px 10px;
@@ -574,7 +575,7 @@ opacity: 1;
 /* question */
 
 #question {
-  background-color: #fff;
+  background-color: #F1F8E9;
   margin-bottom: 45px;
   color: #aaa;//字体颜色
   font-family: 200;

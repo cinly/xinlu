@@ -6,13 +6,14 @@
     <%= f.input :quantity %>
     <%= f.input :price %>
     <%= f.input :size, placeholder: "请输入产品规格"%>
-    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+    <%= f.select :category_id, @categories %>
     <% if @product.photos.present? %>
       <span>目前商品图</span><br>
       <% @product.photos.each do |p| %>
        <%= image_tag p.image.thumb.url %><br />
        <% end %>
     <% end %>
+    <%= f.label :image %><br>
     <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
 
     <%= f.submit "Submit", class: "btn btn-default" %>

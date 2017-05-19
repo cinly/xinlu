@@ -24,7 +24,7 @@
 
             <li>
               <%= link_to products_path do %>
-                 <i class="fa fa-home fa-lg"></i>精彩课程
+                 <i class="fa fa-home fa-lg"></i>心路课程
               <% end %>
             </li>
             <li>
@@ -79,7 +79,7 @@
 
 <!---  end ----->
 
-<!--- keng ----->
+<!--- 首页动图 ----->
 <div class="header_placeholder h80"></div>
  <div class="banner-v2">
   <div class="banner-img">
@@ -143,23 +143,17 @@
 
       <p>————普及心理学</br></br>    关注心理成长的网站</p>
     </h1>
-    <!--- keng 1------>
 
-
-    <!-- end keng 1 ---->
 
   </div>
   <div class="welcome-button">
-      <%= link_to(content_tag(:i, '马上行动', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-primary-welcome") %>
+      <%= link_to(content_tag(:i, '心路启程', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-primary-welcome") %>
    </div>
   </div>
  </div>
 
 
-
-
-
-<!-- end keng ----->
+<!-- end 首页动图 ----->
 
 <!-- hot-products -->
 
@@ -196,6 +190,7 @@
 
                                     <p >
                                       <span><%= link_to(@p1.title, product_path(@product1)) %></span>
+                                      </br>
                                       <span  class="price" >￥ <%= @p1.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -232,6 +227,7 @@
                                   <div class="info-block ">
                                     <p >
                                       <span> <%= link_to(@p2.title, product_path(@product2))  %> </span>
+                                      </br>
                                       <span  class="price" >￥ <%= @p2.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -268,6 +264,7 @@
                                   <div class="info-block">
                                     <p >
                                       <span> <%= link_to(@p3.title, product_path(@product3))  %> </span>
+                                      </br>
                                       <span  class="price" >￥ <%= @p3.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -304,6 +301,7 @@
                                   <div class="info-block">
                                     <p >
                                       <span> <%= link_to(@p4.title, product_path(@product4))  %> </span>
+                                      </br>
                                       <span  class="price" >￥ <%= @p4.price %> </span>
                                       <span class="like pull-right" >
                                         <% if user_signed_in? %>
@@ -349,6 +347,7 @@
 
                                   <p >
                                     <span> <%= link_to(@p5.title, product_path(@product5))  %> </span>
+                                    </br>
                                     <span  class="price" >￥ <%= @p5.price %> </span>
                                     <span class="like pull-right">
                                       <% if user_signed_in? %>
@@ -389,6 +388,7 @@
 
                                     <p >
                                       <span> <%= link_to(@p6.title, product_path(@product6))  %> </span>
+                                      </br>
                                       <span  class="price" >￥ <%= @p6.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -429,6 +429,7 @@
 
                                     <p >
                                       <span> <%= link_to(@p7.title, product_path(@product7))  %> </span>
+                                      </br>
                                       <span  class="price" >￥ <%= @p7.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -469,6 +470,7 @@
 
                                     <p >
                                       <span> <%= link_to(@p8.title, product_path(@product8))  %> </span>
+                                      </br>
                                       <span  class="price" >￥ <%= @p8.price %> </span>
                                       <span class="like pull-right">
                                         <% if user_signed_in? %>
@@ -513,49 +515,12 @@
   <!-- end of hot products -->
 
 
-
-<!-- banner-v2 -->
-
-<div class="banner-v2">
-  <div class="banner-img">
-
-    <img src=" http://ww4.sinaimg.cn/large/006tNc79ly1ffg0sv68muj31hc10cwkv.jpg" />
-
-  </div>
-  <div class="banner-detail">
-    <!-- <h2 class="banner-logo ">
-      banke
-    </h2> -->
-    <div  class="banner-slogan">
-      <h1>
-        <span class="sub-slogan"> 心 路</span>
-
-        <p>————普及心理学</p></br><p>关注心理成长的网站</p>
-      </h1>
-    </div>
-    <div class="welcome-button">
-        <%= link_to(content_tag(:i, '马上行动', class: 'fa fa-hand-o-right'), products_path,  class: "btn btn-primary-welcome") %>
-    </div>
-  </div>
-</div>
-
-
-<!-- end of banner-v2 -->
-
-
-
-<!-- test section -->
-
-
-
-<!-- end of test section -->
-
 <!-- our service and -->
 
 <div id="service" class="row">
 
   <div class="module-name decorative">
-    <span>我们能为您解决什么</span>
+    <span>您的心路历程可能帮您解决什么</span>
   </div>
 
   <div class="col-md-10 col-md-offset-1">
@@ -609,7 +574,7 @@
 
 <div id="resources" class="row">
   <div class="module-name decorative">
-    <span>我们的专业导师</span>
+    <span>迷路时推荐多看看他们</span>
   </div>
 
   <div class="col-md-10 col-md-offset-1">
@@ -684,7 +649,7 @@
 
 <div id="call-to-action" class="row">
   <div class="text-center">
-    <%= link_to("立即听课 <i class='fa fa-arrow-right'></i>".html_safe, products_path, class: "btn btn-info btn-lg") %>
+    <%= link_to("心路启程 <i class='fa fa-arrow-right'></i>".html_safe, products_path, class: "btn btn-info btn-lg") %>
   </div>
 </div>
 
@@ -703,8 +668,8 @@
     <p class="answer"><b>A：</b>心路的上架课程均可添加进购物车，部分课程免费，付款课程付款成功后，即可参加该课程哦</p>
     </div>
     <div class="col-md-3 col-sm-6">
-    <p class="sub-question"><b>Q：</b>可以自主选择知名大咖来讲座吗？</p>
-    <p class="answer"><b>A：</b>心路为您提供最权威的业界大咖的幸福手册，您可以自主选择。如果您有更好的推荐，我们一定极力与他们合作，让您看到你心属的大咖为您提供他的幸福手册</p>
+    <p class="sub-question"><b>Q：</b>如何理解心路这个网站？</p>
+    <p class="answer"><b>A：</b>心路为您提供最科学的心理学知识，掌握最前沿的心理学动态，了解权威的心理学派，让每一个人都找到属于自己的心路历程</p>
     </div>
     <div class="col-md-3 col-sm-6">
       <p class="sub-question"><b>Q：</b>付费后可以退款吗？</p>
@@ -712,7 +677,7 @@
     </div>
     <div class="col-md-3 col-sm-6">
       <p class="sub-question"><b>Q：</b>这里有线下活动吗？</p>
-      <p class="answer"><b>A：</b>心路为满足伙伴们的需求，会定期在举行线下交流及公开讲座，让幸福贴近生活，走进你我</p>
+      <p class="answer"><b>A：</b>心路为满足伙伴们的需求，会定期在举行线下交流及公开讲座，让心理学贴近生活，走进你我</p>
     </div>
   </div>
 </div>
@@ -736,7 +701,7 @@
     <div class="design">
       <span><%= link_to '关于我们', about_path %></span>  <span><%= link_to '联系我们', about_path %></span>
       <p>@Copyright 2017 心路 由<span>马鑫磊</span> 和 <span>trony</span>共同打造</p>
-      <p>幸福一生</p>
+      <p>属于自己的心路历程</p>
     </div>
   </div>
 </div>
