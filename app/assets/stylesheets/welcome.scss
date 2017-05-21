@@ -217,15 +217,15 @@ ul.subheader-content {
 
 .banner-v2 {
   margin-top: 60px;
-  height: 400px; // 大图以下的高度
+  height: 360px; // 大图以下的高度
   .banner-img{
     height: 0px;
     position: relative;
     z-index:1;
     img{
       width:50%;
-      //height: 0%;
-      opacity:0.5;
+      height: 380px;
+      //opacity:0.5;
 
     }
   }
