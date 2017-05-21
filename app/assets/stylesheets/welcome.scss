@@ -25,7 +25,7 @@ html, body {
   position: relative;
   height: 60px;// navbar -high
   text-align: center;
-  background: #9CCC65;
+  background: #388E3C;
   border-bottom: 1px solid #689F38;
   padding: 15px;
   z-index: 1000;
@@ -223,8 +223,8 @@ ul.subheader-content {
     position: relative;
     z-index:1;
     img{
-      width:50%;
-      height: 380px;
+      width:100%;
+      height: 360px;
       //opacity:0.5;
 
     }
@@ -599,7 +599,7 @@ opacity: 1;
 /*  Welcome page Footer  */
 
 .footer {
-  background-color: #9CCC65;
+  background-color: #388E3C;
   color: #959595;
   margin-top: 20px;
   padding-top: 20px;
@@ -609,7 +609,7 @@ opacity: 1;
   .copyright {
     padding-top: 5px;
     padding-bottom: 5px;
-    background: #9CCC65;
+    background: #388E3C;
     padding-top: 10px;
     padding-bottom: 10px;
     color: #fff;
