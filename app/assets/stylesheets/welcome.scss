@@ -242,11 +242,11 @@ ul.subheader-content {
     }
     .banner-slogan {
       position: relative;
-      color: #33691E;
+      color: #fff;
       margin-top: 40px;
-      margin-left: 54%; //slogan位置
+      margin-left: 10%; //slogan位置
       font-weight: 400;
-      width: 600px;//slogan长度
+      width: 1000px;//slogan长度
     }
     .sub-slogan {
       margin-top: 40px;
@@ -262,8 +262,8 @@ ul.subheader-content {
     }
     .btn.btn-primary-welcome{
        background-color: transparent;
-       color: #33691E;
-       border-color: #33691E;
+       color: #fff;
+       border-color: #fff;
        padding: 5px 20px;
        font-size: 20px;
        letter-spacing: 1px;
