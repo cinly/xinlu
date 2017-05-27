@@ -1,15 +1,29 @@
 
 <div class="col-md-8 col-md-offset-2">
   <h2 class="text-center">添写答案信息</h2>
+  <table>
+  <% @exams.each do |exam| %>
   <%= simple_form_for [@choice] do |f| %>
-    <%= f.input :name, placeholder: "请输入与试题相同的名字"%>
-    <%= f.input :is_aa1en, :label => "A" %>
-    <%= f.input :is_bb1en, :label => "B" %>
-    <%= f.input :is_cc1en, :label => "C" %>
-    <%= f.input :is_dd1en, :label => "D" %>
-    <%= f.input :is_ee1en, :label => "E" %>
-    <%= f.input :is_ff1en, :label => "F" %>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>问题</th>
+      <th>选项</th>
+    </tr>
+    <thead>
+
+    <tbody>
+      <tr>
+        <td><%= exam.name %></td>
+        <td>
+          <%= exam.question %></td>
+          <%= f.input :is_aa1en, :label => "A." %> <%= exam.answer_1 %>
+          <%= f.input :is_bb1en, :label => "B." %> <%=  exam.answer_2 %>
+          <%= f.input :is_cc1en, :label => "C." %> <%=  exam.answer_3 %>
+          <%= f.input :is_dd1en, :label => "D." %> <%=  exam.answer_4 %>
+        </td>
     <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
   <% end %>
 </div>
 

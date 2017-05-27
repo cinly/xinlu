@@ -3,6 +3,7 @@ class ChoicesController < ApplicationController
 
     def index
       @choices = Choice.all
+
       @exams = Exam.all
     end
 
@@ -17,6 +18,7 @@ class ChoicesController < ApplicationController
 
     def edit
       @choice = Choice.find(params[:id])
+      @exams = Exam.all
     end
 
     def create

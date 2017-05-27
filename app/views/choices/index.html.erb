@@ -13,7 +13,7 @@
     <% @exams.each do |exam| %>
     <tr>
       <td>
-         exam.name
+         <%= exam.name %>
       </td>
        <td>
          <%= exam.question %>
@@ -51,16 +51,13 @@
          <%= link_to dd1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
          <i class="fa fa-square-o"></i><% end %> D. <%= exam.answer_4 %>
          <% end %>
-
-
        </td>
 
        <td>
-         <td>
-           <%= link_to("Edit", edit_choice_path(choice)) %> |
-           <%= link_to("Delete", choice_path(choice), method: :delete, data: { confirm: "Are your sure?" }) %>
-         </td>
+         <%= link_to("开始答题", edit_choice_path(choice)) %> |
+         <%= link_to("Delete", choice_path(choice), method: :delete, data: { confirm: "Are your sure?" }) %>
        </td>
+
       <% end %>
       <% end %>
      </tr>
