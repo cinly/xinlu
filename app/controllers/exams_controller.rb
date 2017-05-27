@@ -5,7 +5,7 @@ class ExamsController < ApplicationController
 
     @exams = Exam.all.paginate(:page => params[:page], :per_page => 5)
     @choice = Choice.new
-
+    @choices = Choice.all
   end
 
 

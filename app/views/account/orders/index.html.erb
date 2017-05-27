@@ -9,6 +9,10 @@
       <tr>
         <th>#</th>
         <th>下单时间</th>
+        <th>订购者</th>
+        <th>订单状态</th>
+        <th>管理</th>
+        <th>管理</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +23,18 @@
           </td>
           <td>
             <%= order.created_at.to_s(:long) %>
+          </td>
+          <td> <%= order.user.email %></td>
+          <td> <%= order.aasm_state %> </td>
+          <td>
+            <%if order.is_paid %>
+            <%= link_to("考试去", exams_path) %>
+            <% end %>
+          </td>
+          <td>
+            <%if order.is_paid %>
+            <%= link_to("choice去", choices_path) %>
+            <% end %>
           </td>
         </tr>
       <% end %>

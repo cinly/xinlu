@@ -1,6 +1,7 @@
 <h2> 考试题 </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增试题", new_admin_exam_path, class: "btn btn-primary btn-sm") %>
+  <%= link_to("新增答案代号", new_choice_path, class: "btn btn-primary btn-sm") %>
 </div>
 
 <table class="table table-bordered">
@@ -109,13 +110,15 @@
            <br>
            <%= f.input :is_dd1en, :label => "D." %>
            <%= f.submit "确定", class: "btn btn-info btn-info", data: {disable_with: "Submitting..."} %>
-
+           <% end %>
 
        </td>
        <td>
-         <%= @choice.name %>
+         <% @choices.each do |choice| %>
+         <%= choice.name %>
+         <% end %>
        </td>
-        <% end %>
+
       <% end %>
      </tr>
    </tbody>
